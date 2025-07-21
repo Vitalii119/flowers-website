@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    background-image: url("/header/img1.jpg");
+    background-size: cover;
+}
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.header {
+    position: static;
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    background-color: rgb(211, 48, 203);
+    color: white;
+    font-size: 30px;
+    line-height: 60px;
+    text-shadow: 5ch 5ch 50px rgba(14, 0, 0, 0.5);
+    
+}
+#footer {
+    
+    background: #6d756c;
+    border: 1px solid rgb(238, 231, 231);
+    padding: 0px;
+    cursor: pointer;
+    position: static; 
+    width: 100%;
+    
+    
+    
+  }
+.items {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 80vh;
+    perspective: calc(var(--index)*150);
+    
+}
+.item {
+    width: 50%;
+    height: 40%;
+    background-color: rgb(173, 230, 185);
+    background-size: cover;
+    background-position: center;
+    margin: 1px;
+    cursor: pointer;
+    filter: grayscale() brightness(.5);    
+    
+}
+ .items .item:hover {
+    filter: inherit;
+
+}
+
+.items .item:active, .items .item:focus {
+    width:50%;
+    height: 50%;
+    filter: inherit;    
+    transform: translateZ(calc(var(--index)*10));
+   
+    
+}
+#info  {
+    list-style: lower-latin;
+    display: block;
+    position: static;    
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+}
+#info  li {
+    display: inline;
+    background: #e4b7e4;
+    border: 2px solid rgb(211, 91, 91);  
+    padding: 0 30px;
+    cursor: pointer;
+    position: relative;
+  }
+  .katalogBtn{
+    display: inline;
+    background: #e4b7e4;
+    border: 2px solid rgb(211, 91, 91);  
+    padding: 0 30px;
+    cursor: pointer;
+    position: relative;
+    color: rgb(18, 7, 65);
+  }
+  .katalogBtn:hover {
+    color: #1f0707;
+    background: #fafafa;
+    border-radius: 5px;
+    border-color: #0bec16;
+  
+  }
+#info  li:hover {
+    color: #1f0707;
+    background: #fafafa;
+    border-radius: 5px;
+    border-color: #0bec16;
+  
+  }
+  
+#info  li:active {
+    color: #611414;
+    background: #a3c58c;
+    border-radius: 5px;
+    border-color: #0bec16;
+  
+  }
+  #call {
+    list-style: lower-latin;    ;
+    float: none;
+    position: static;
+    text-align: center;
+    height: 15px;
+    line-height: 15px;
+    
+    
+  }
+  #call  li {
+    color: #f5eeee;
+    border-radius: 5px;
+    position: relative; 
+    margin-top: auto;     
+    border-top: #34bb9e solid 15px;
+    border-bottom: #34bb9e solid 5px;
+   
+  }
+  #call  li:hover {
+    color: #611414;
+    background: #f1e3e3;
+    border-top: solid 15px;
+    border-bottom: solid 5px;
+    border-color: #0bec16;
+  }
+  #call li p {
+    color: black;
+    cursor: pointer;
+  }
+  #header, #call li{
+    background-color: #db22db;
+    position: static;
+  }
+  #call li p:active{
+    color: #cf1010;
+    background: #f1e3e3;
+    border-radius: 5px;
+  }
+.items h1{
+    color: #882388;
+    position: relative;
+    text-align: center;
+    background-color: #e3f0f1;    
+    opacity: 0.4;
+    
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: scroll; /* Включить прокрутку, если нужно */
+    background-color: rgb(0,0,0); /* Черный фон с прозрачностью */
+    background-color: rgba(0,0,0,0.4); /* Черный фон с прозрачностью */
+}
+    
+.modal1 {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: scroll; /* Включить прокрутку, если нужно */
+    background-color: rgb(0,0,0); /* Черный фон с прозрачностью */
+    background-color: rgba(0,0,0,0.4); /* Черный фон с прозрачностью */
+}
+.modal2 {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: scroll; /* Включить прокрутку, если нужно */
+    background-color: rgb(0,0,0); /* Черный фон с прозрачностью */
+    background-color: rgba(0,0,0,0.4); /* Черный фон с прозрачностью */
+}
+
+.modal-content {
+    background-color: #b387b3;
+    margin: 15% auto; /* 15% сверху и центрирование по горизонтали */
+    padding: 20px;
+    border: 1px solid #9c341a;
+    width: 60%; /* Ширина модального окна */
+    border-radius: 10px;
+}
+.close {
+    color: #140202;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    
+
+}
+.close :hover {
+    color: rgb(26, 18, 18);
+}
+
+#aboutBtn {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0;     
+    margin: 0;
+    cursor: pointer;
+    font: inherit;
+}   
+#CatalogBtn {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0;     
+    margin: 0;
+    cursor: pointer;
+    font: inherit;
+}   
+#Kontakts {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0;     
+    margin: 0;
+    cursor: pointer;
+    font: inherit;
+}   
+
+#katalogBtn {
+    background-color: transparent;
+    color: rgb(167, 26, 145);
+    padding: 10px;
+    border: 1px solid #96508a;
+    width: 80%; /* Ширина модального окна */
+    border-radius: 10px;
+    cursor: pointer;
+}
