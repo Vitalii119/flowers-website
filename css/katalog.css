@@ -1,3 +1,19 @@
+@media (max-width: 768px) {
+  .photo-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .photo-text {
+    width: 100%;
+    padding: 10px;
+  }
+}
 * {
     margin: 0;
     padding: 0;
@@ -99,20 +115,5 @@ filter: inherit;
 
     
 }
-@media (max-width: 768px) {
-  .photo-block {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .photo {
-    width: 100%;
-    height: auto;
-  }
-
-  .photo-text {
-    width: 100%;
-    padding: 10px;
-  }
-}
 
