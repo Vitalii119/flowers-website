@@ -1,9 +1,9 @@
-const button = document.getElementById("callme");
-function handleClick() {
-    alert("Пожалуйста подтвердите что вы хотите что бы мы вам перезвонили в течении дня");
-    result = confirm("Вы согласны?");
+// const button = document.getElementById("callme");
+// function handleClick() {
+//     alert("Пожалуйста подтвердите что вы хотите что бы мы вам перезвонили в течении дня");
+//     result = confirm("Вы согласны?");
 
-}
+// }
 button.addEventListener("click", handleClick);
 
 document.getElementById("aboutBtn").onclick = function() {

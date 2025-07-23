@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 html, body {
-    height: 100%;
+    height: 100%;  
     background: url("../images/img1.jpg") no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
@@ -20,7 +20,7 @@ html, body {
     width: 100%;
     text-align: center;
     height: 60px;
-    background-color: rgb(211, 48, 203);
+    background-color: rgb(168, 110, 165);
     color: white;
     font-size: 30px;
     line-height: 60px;
@@ -29,48 +29,13 @@ html, body {
 }
 #footer {
     
-    background: #6d756c;
-    border: 1px solid rgb(238, 231, 231);
+    background: #6d756c;    
     padding: 0px;
     cursor: pointer;
-    position: static; 
-    width: 100%;
-    
-    
+    position: static;
     
   }
-.items {
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    height: 80vh;
-    perspective: calc(var(--index)*150);
-    
-}
-.item {
-    width: 50%;
-    height: 40%;
-    background-color: rgb(173, 230, 185);
-    background-size: cover;
-    background-position: center;
-    margin: 1px;
-    cursor: pointer;
-    filter: grayscale() brightness(.5);    
-    
-}
- .items .item:hover {
-    filter: inherit;
 
-}
-
-.items .item:active, .items .item:focus {
-    width:50%;
-    height: 50%;
-    filter: inherit;    
-    transform: translateZ(calc(var(--index)*10));
-   
-    
-}
 #info  {
     list-style: lower-latin;
     display: block;
@@ -78,93 +43,84 @@ html, body {
     text-align: center;
     height: 70px;
     line-height: 70px;
+
 }
 #info  li {
     display: inline;
-    background: #e4b7e4;
-    border: 2px solid rgb(211, 91, 91);  
-    padding: 0 30px;
+    background-color: rgba(255,255,255,0.4);
+    border: 2px solid rgb(168, 110, 165);  
+    padding: 0 40px;
     cursor: pointer;
     position: relative;
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 15px;
+    
+    
+    
   }
   .katalogBtn{
-    display: inline;
-    background: #e4b7e4;
-    border: 2px solid rgb(211, 91, 91);  
-    padding: 0 30px;
+    
+    background-color: rgba(255,255,255,0.4);
+    border: 5px solid rgb(168, 110, 165);     
     cursor: pointer;
-    position: relative;
+    display: inline-block;
     color: rgb(18, 7, 65);
+    height: 60px;
+    width: 40%;
+    border-radius: 15px;
+    position: static;       
+    font-size: 25px;
+    font-style:normal;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 50px;   
+    
   }
   .katalogBtn:hover {
     color: #1f0707;
     background: #fafafa;
-    border-radius: 5px;
-    border-color: #0bec16;
+    border-radius: 15px;
+    border-color: #b5d4b7;
+    
   
   }
 #info  li:hover {
     color: #1f0707;
     background: #fafafa;
-    border-radius: 5px;
-    border-color: #0bec16;
+    border-radius: 10px;
+    border-color: #b5d4b7;
   
-  }
-  
-#info  li:active {
-    color: #611414;
-    background: #a3c58c;
-    border-radius: 5px;
-    border-color: #0bec16;
-  
-  }
+  } 
+
   #call {
-    list-style: lower-latin;    ;
-    float: none;
-    position: static;
-    text-align: center;
-    height: 15px;
-    line-height: 15px;
+    list-style: lower-latin;      
+    text-align: center;    
+    line-height: 16px;         
+    width: 100%; 
+    padding: 20px;
+    font-size: 19px;
+    margin-top: 95%;
     
+     
     
   }
   #call  li {
     color: #f5eeee;
     border-radius: 5px;
-    position: relative; 
-    margin-top: auto;     
-    border-top: #34bb9e solid 15px;
-    border-bottom: #34bb9e solid 5px;
+    position: relative;    
+    background-color: rgb(168, 110, 165, 0.7); 
+    
+    
+    
    
   }
-  #call  li:hover {
-    color: #611414;
-    background: #f1e3e3;
-    border-top: solid 15px;
-    border-bottom: solid 5px;
-    border-color: #0bec16;
-  }
+  
   #call li p {
-    color: black;
-    cursor: pointer;
+    color: rgb(255, 253, 253);
+    cursor: pointer;    
   }
-  #header, #call li{
-    background-color: #db22db;
-    position: static;
-  }
-  #call li p:active{
-    color: #cf1010;
-    background: #f1e3e3;
-    border-radius: 5px;
-  }
-.items h1{
-    color: #882388;
-    position: relative;
-    text-align: center;
-    background-color: #e3f0f1;    
-    opacity: 0.4;
-    
-}
+  
 
 .modal {
     display: none; 
@@ -206,23 +162,23 @@ html, body {
 
 .modal-content {
     background-color: #b387b3;
-    margin: 15% auto; /* 15% сверху и центрирование по горизонтали */
-    padding: 20px;
+    margin: 10% auto; 
+    padding: 15px;
     border: 1px solid #9c341a;
-    width: 60%; /* Ширина модального окна */
+    width: 80%; /* Ширина модального окна */
     border-radius: 10px;
+    font-size: 20px;
+    font-style: italic;
 }
 .close {
-    color: #140202;
+    color: #0c0000;
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer;
-    
-
+    cursor: pointer;    
 }
 .close :hover {
-    color: rgb(26, 18, 18);
+    color: rgb(14, 0, 0);
 }
 
 #aboutBtn {
@@ -234,15 +190,7 @@ html, body {
     cursor: pointer;
     font: inherit;
 }   
-#CatalogBtn {
-    background-color: transparent;
-    color: inherit;
-    border: none;
-    padding: 0;     
-    margin: 0;
-    cursor: pointer;
-    font: inherit;
-}   
+
 #Kontakts {
     background-color: transparent;
     color: inherit;
@@ -253,12 +201,4 @@ html, body {
     font: inherit;
 }   
 
-#katalogBtn {
-    background-color: transparent;
-    color: rgb(167, 26, 145);
-    padding: 10px;
-    border: 1px solid #96508a;
-    width: 80%; /* Ширина модального окна */
-    border-radius: 10px;
-    cursor: pointer;
-}
+
