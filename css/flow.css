@@ -51,12 +51,15 @@ html, body {
     text-shadow: 5ch 5ch 50px rgba(14, 0, 0, 0.5);
     
 }
-#footer {
+.footer {
     
-    background: #6d756c;    
+        
     padding: 0px;
     cursor: pointer;
-    position: static;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
     
   }
 
@@ -132,6 +135,8 @@ html, body {
     padding: 20px;
     font-size: 19px;
     margin-top: 95%;
+    box-sizing: border-box;
+    position: relative;;
     
      
     
