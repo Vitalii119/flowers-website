@@ -27,17 +27,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-html, body {
-    height: 100%;  
+ html, body {
+    height: 100%; 
     background: url("../images/img1.jpg") no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
+    padding-bottom: 100px;
 }
 .wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 100px;
 }
 .header {
     position: static;
@@ -51,17 +53,10 @@ html, body {
     text-shadow: 5ch 5ch 50px rgba(14, 0, 0, 0.5);
     
 }
-.footer {
+/* .footer {     
+
     
-        
-    padding: 0px;
-    cursor: pointer;
-    position: relative;
-    width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
-    
-  }
+  } */
 
 #info  {
     list-style: lower-latin;
@@ -86,17 +81,17 @@ html, body {
     
     
   }
-  .katalogBtn{
+  
+.katalogBtn{
     
     background-color: rgba(255,255,255,0.4);
     border: 5px solid rgb(168, 110, 165);     
     cursor: pointer;
-    display: block;
+    display:grid;
     color: rgb(18, 7, 65);
     height: 60px;
     width: 100%;    
-    border-radius: 15px;
-    position: static;       
+    border-radius: 15px;          
     font-size: 22px;
     font-style:normal;
     font-weight: 500;
@@ -107,7 +102,7 @@ html, body {
     padding: 10px 15px; 
     white-space: normal;
     word-wrap: break-word;
-    margin: 10px auto;
+    margin: 10px auto;   
     
   }
   
@@ -128,26 +123,20 @@ html, body {
   } 
 
   #call {
-    list-style: lower-latin;      
-    text-align: center;    
-    line-height: 16px;         
-    width: 100%; 
-    padding: 20px;
-    font-size: 19px;
-    margin-top: 95%;
-    box-sizing: border-box;
-    position: relative;;
-    
-     
-    
-  }
-  #call  li {
-    color: #f5eeee;
-    border-radius: 5px;
-    position: relative;    
     background-color: rgb(168, 110, 165, 0.7);  
-   
+    text-align: center;   
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    z-index: 10;
+    
+    
   }
+  
+  
     
   #call li p {
     color: rgb(255, 253, 253);
