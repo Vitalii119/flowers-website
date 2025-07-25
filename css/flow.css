@@ -59,11 +59,11 @@
 
 #info  {
     list-style: lower-latin;
-    display: block;
-    position: static;    
+    margin: 60px;       
     text-align: center;
     height: 70px;
     line-height: 70px;
+    top: 80px;
 
 }
 #info  li {
@@ -239,7 +239,7 @@
 .cartBtn {
   position: fixed;
   top: 10px;
-  left: 20px;
+  left: 30px;
   padding: 10px 20px;
   font-size: 16px;     
   border-radius: 8px;
@@ -255,18 +255,20 @@
  position: fixed;
  top: 60px;
  left: 15px; 
+ background-color: rgb(168, 110, 165, 0.8);
 
 }
+    
+  
+
 #customer-info input,
 #customer-info textarea {
-  position: fixed;
-  top: 100px;
-  width: 100%;
-  padding: 15px;
+  
+  width: 250px;
+  padding: 10px;
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   border-radius: 5px;
-  border: 1px solid #ccc;
-   
-   
+  border: 1px solid #1f1111;
+  
 }
