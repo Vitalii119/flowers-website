@@ -137,7 +137,7 @@ filter: inherit;
 }
 .cartBtn {
   position: fixed;
-  top: 10px;
+  top: 70px;
   right: 30px;
   padding: 10px 20px;
   font-size: 16px;     
@@ -152,7 +152,7 @@ filter: inherit;
 }
 #cart {     
  position: fixed;
- top: 60px;
+ top: 110px;
  right: 15px; 
  background-color: rgb(168, 110, 165, 0.8);
 
@@ -170,6 +170,15 @@ filter: inherit;
   border-radius: 5px;
   border: 1px solid #1f1111;
   
+}
+.cart-item button {
+  margin-left: 5px;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  background-color: #d6d3d3;
+  cursor: pointer;
 }
 
 
