@@ -42,7 +42,7 @@
     padding-bottom: 100px;
 }
 .header {
-    position: static;
+    position: fixed;
     width: 100%;
     text-align: center;
     height: 60px;
@@ -52,11 +52,10 @@
     line-height: 60px;
     text-shadow: 5ch 5ch 50px rgba(14, 0, 0, 0.5);
     
-}
-/* .footer {     
-
     
-  } */
+    
+}
+
 
 #info  {
     list-style: lower-latin;
@@ -238,23 +237,36 @@
     background-color: #9a2da8;
 }
 .cartBtn {
-    padding: 10px 20px;
-    font-size: 16px;     
-    border-radius: 8px;
-    cursor: pointer;
-    width: auto;             /* важно! убирает растяжение */
-    max-width: 200px;
-    background-color: rgba(119, 116, 116, 0.4);
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;     
+  border-radius: 8px;
+  cursor: pointer;
+  width: auto;             /* важно! убирает растяжение */
+  max-width: 200px;
+  background-color: rgba(119, 116, 116, 0.4);
+  z-index: 999;
 
-    
-  
+
+}
+#cart {     
+ position: fixed;
+ top: 60px;
+ left: 15px; 
+
 }
 #customer-info input,
 #customer-info textarea {
+  position: fixed;
+  top: 100px;
   width: 100%;
-  padding: 8px;
+  padding: 15px;
   font-size: 16px;
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+   
+   
 }

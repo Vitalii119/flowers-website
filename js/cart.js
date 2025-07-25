@@ -1,35 +1,48 @@
 
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
 
 function saveCart() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 function addToCart(productName) {
-  cart.push(productName);
+  const existingItem = cart.find(item => item.name === productName);
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cart.push({ name: productName, quantity: 1 });
+  }
   saveCart();
   updateCartDisplay();
 }
 
 function removeFromCart(index) {
-  cart.splice(index, 1);
+  if (cart[index].quantity > 1) {
+    cart[index].quantity--;
+  } else {
+    cart.splice(index, 1);
+  }
   saveCart();
   updateCartDisplay();
 }
 
 function updateCartDisplay() {
-    document.getElementById('cart-count').innerText = cart.length;
+  document.getElementById('cart-count').innerText =
+    cart.reduce((total, item) => total + item.quantity, 0);
 
-    const list = document.getElementById('cart-list');
-    if (list) {
-        list.innerHTML = '';
-        cart.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.className = 'cart-item';
-            li.innerHTML = `${item} <button onclick="removeFromCart(${index})">Видалити</button>`;
-            list.appendChild(li);
-        });
-    }
+  const list = document.getElementById('cart-list');
+  if (list) {
+    list.innerHTML = '';
+    cart.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.className = 'cart-item';
+      li.innerHTML = `${item.name} — ${item.quantity} шт. 
+        <button onclick="removeFromCart(${index})">−</button>`;
+      list.appendChild(li);
+    });
+  }
 }
 
 function toggleCart() {
@@ -55,12 +68,12 @@ function submitOrder() {
     return;
   }
 
-  const orderText =
-    "🛒 НОВЕ ЗАМОВЛЕННЯ:\n\n" +
-    cart.map((item, i) => `${i + 1}. ${item}`).join('\n') +
-    "\n\n👤 Ім'я: " + name +
-    "\n📞 Телефон: " + phone +
-    "\n🏠 Адреса: " + address;
+ const orderText =
+  "🛒 НОВЕ ЗАМОВЛЕННЯ:\n\n" +
+  cart.map((item, i) => `${i + 1}. ${item.name} — ${item.quantity} шт.`).join('\n') +
+  "\n\n👤 Ім'я: " + name +
+  "\n📞 Телефон: " + phone +
+  "\n🏠 Адреса: " + address;
 
   fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
     method: 'POST',
