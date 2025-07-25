@@ -115,5 +115,39 @@ filter: inherit;
 
     
 }
+.back-button {
+    text-align: center;
+    background-color: rgb(168, 110, 165, 0.4);
+    width: 110px;
+    border-radius: 15px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: large;
+}
+.back-button:hover {
+    transform: translateZ(calc(var(--index)*10));
+
+}
+.cartBtn {
+    padding: 10px 20px;
+    font-size: 16px;     
+    border-radius: 8px;
+    cursor: pointer;
+    width: auto;             /* важно! убирает растяжение */
+    max-width: 200px;
+    background-color: rgba(119, 116, 116, 0.4);
+    
+    
+  
+}
+#customer-info input,
+#customer-info textarea {
+  width: 30%;
+  padding: 4px;
+  font-size: 16px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
 

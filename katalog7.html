@@ -10,6 +10,21 @@
     <div class="wrapper">
     <div class="header">
         Чайно-Гибридні</div>
+
+        <button class= "cartBtn" onclick="toggleCart()">🛒 Корзина (<span id="cart-count">0</span>)</button>
+        <div id="cart" style="display: none; border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
+    <h3>Ваші товари:</h3>
+    <ul id="cart-list"></ul>
+    <div id="customer-info" style="margin-top: 20px;">
+  <h4>Ваші дані:</h4>
+  <input type="text" id="customer-name" placeholder="Ваше ім'я" required><br><br>
+  <input type="tel" id="customer-phone" placeholder="Телефон" required><br><br>
+  <textarea id="customer-address" placeholder="Адреса доставки" required></textarea>
+</div>
+    <button class= "cartBtn" onclick="submitOrder()" style="margin-top:10px;">📤 Оформити замовлення</button>
+</div>
+
+        <a href="flow.html" class="back-button">На головну</a>
         
         <div class="photo-block">
   <div class="item-row">
@@ -17,7 +32,7 @@
     <div class="photo-text">
         <h2>Місс Піггі</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Місс Піггі')">Купити</button>
     </div>
   </div>
   
@@ -26,7 +41,7 @@
     <div class="photo-text">
         <h2>Боінг</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Боінг')">Купити</button>
     </div>
   </div>
 
@@ -35,7 +50,7 @@
     <div class="photo-text">
         <h2>Рене Гасінні</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Рене Гасінні')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -43,7 +58,7 @@
     <div class="photo-text">
         <h2>Міріам</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Міріам')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -51,7 +66,7 @@
     <div class="photo-text">
         <h2>Глорія Дей</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Глорія Дей')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -59,7 +74,7 @@
     <div class="photo-text">
         <h2>Касіма</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Касіма')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -67,7 +82,7 @@
     <div class="photo-text">
         <h2>Черрі Бренді</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Черрі Бренді')">Купити</button>
     </div>
         </div>
     
@@ -76,7 +91,7 @@
     <div class="photo-text">
         <h2>Сеньоріта</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Сеньоріта')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -84,7 +99,7 @@
     <div class="photo-text">
         <h2>Кєріо</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Кєріо')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -92,7 +107,7 @@
     <div class="photo-text">
         <h2>Фантазія Мондіаль</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Фантазія Мондіаль')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -100,7 +115,7 @@
     <div class="photo-text">
         <h2>Рафаелло</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Рафаелло')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -108,7 +123,7 @@
     <div class="photo-text">
         <h2>Аскот Нью</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Аскот Нью')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -116,7 +131,7 @@
     <div class="photo-text">
         <h2>Плантен ун Блюмен</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Плантен ун Блюмен')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -124,7 +139,7 @@
     <div class="photo-text">
         <h2>Біг Парпл</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Біг Парпл')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -132,7 +147,7 @@
     <div class="photo-text">
         <h2>Талєя</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Талєя')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -140,7 +155,7 @@
     <div class="photo-text">
         <h2>Етруска</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Етруска')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -148,7 +163,7 @@
     <div class="photo-text">
         <h2>Малікорн</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Малікорн')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -156,7 +171,7 @@
     <div class="photo-text">
         <h2>Парадіз</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Парадіз')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -164,7 +179,7 @@
     <div class="photo-text">
         <h2>№№№</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('№№№')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -172,7 +187,7 @@
     <div class="photo-text">
         <h2>Замок Шеверні</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Замок Шеверні')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -180,7 +195,7 @@
     <div class="photo-text">
         <h2>Хартс</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Хартс')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -188,7 +203,7 @@
     <div class="photo-text">
         <h2>Амнезія</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Амнезія')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -196,7 +211,7 @@
     <div class="photo-text">
         <h2>Білий шоколад</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Білий шоколад')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -204,7 +219,7 @@
     <div class="photo-text">
         <h2>Тоффі</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Тоффі')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -212,7 +227,7 @@
     <div class="photo-text">
         <h2>Чандос Б'юті</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Чандос Бюті')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -220,7 +235,7 @@
     <div class="photo-text">
         <h2>Ред Піано</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Ред Піано')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -228,7 +243,7 @@
     <div class="photo-text">
         <h2>Лімонад</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Лімонад')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -236,7 +251,7 @@
     <div class="photo-text">
         <h2>Ель Торо</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Ель Торо')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -244,7 +259,7 @@
     <div class="photo-text">
         <h2>Незнайомка</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Незнайомка')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -252,7 +267,7 @@
     <div class="photo-text">
         <h2>Луї де Фюнес</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Луї де Фюнес')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -260,7 +275,7 @@
     <div class="photo-text">
         <h2>Експлорер</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Експлорер')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -268,7 +283,7 @@
     <div class="photo-text">
         <h2>Кофе Латте</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Кофе Латте')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -276,7 +291,7 @@
     <div class="photo-text">
         <h2>ТвН</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('ТвН')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -284,7 +299,7 @@
     <div class="photo-text">
         <h2>Сорбет Аваланч</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Сорбет Аваланч')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -292,7 +307,7 @@
     <div class="photo-text">
         <h2>Дольче Віта</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Дольче Віта')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -300,7 +315,7 @@
     <div class="photo-text">
         <h2>Блек Меджик</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Блек Меджик')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -308,7 +323,7 @@
     <div class="photo-text">
         <h2>Блек Баккара</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Блек Баккара')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -316,7 +331,7 @@
     <div class="photo-text">
         <h2>Латін леді</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Латін леді')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -324,7 +339,7 @@
     <div class="photo-text">
         <h2>Едді Мітчелл</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Едді Мітчелл')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -332,7 +347,7 @@
     <div class="photo-text">
         <h2>Августа Луїза</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Августа Луїза')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -340,7 +355,7 @@
     <div class="photo-text">
         <h2>Капучіно</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Капучіно')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -348,7 +363,7 @@
     <div class="photo-text">
         <h2>Діп Парпл</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Діп Парпл')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -356,7 +371,7 @@
     <div class="photo-text">
         <h2>Каренза</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Каренза')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -364,7 +379,7 @@
     <div class="photo-text">
         <h2>Аква</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Аква')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -372,7 +387,7 @@
     <div class="photo-text">
         <h2>Рокстар</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Рокстар')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -380,7 +395,7 @@
     <div class="photo-text">
         <h2>Хай Меджик</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Хай Меджик')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -388,7 +403,7 @@
     <div class="photo-text">
         <h2>Графіня Діана</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Графіня Діана')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -396,7 +411,7 @@
     <div class="photo-text">
         <h2>Пінк Інтуішн</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Пінк Інтуішн')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -404,7 +419,7 @@
     <div class="photo-text">
         <h2>Ля Перла</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Ля Перла')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -412,7 +427,7 @@
     <div class="photo-text">
         <h2>Блю Парфюм</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Блю Парфюм')">Купити</button>
     </div>
     </div>
     <div class="item-row">
@@ -420,9 +435,12 @@
     <div class="photo-text">
         <h2>Ранок Парижу</h2>
         <p>Свежие розы из лучших питомников. Доставка по городу.</p>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="addToCart('Ранок Парижу')">Купити</button>
     </div>
     </div>
 </div>
+
+<script src="js/cart.js"></script>
+
 </body>
 </html>
