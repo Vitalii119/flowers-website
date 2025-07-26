@@ -104,6 +104,88 @@ const productButtonMap = {
     'Міябі':'btn-101',
   
 };
+const productPrices = {
+  'Транквіліті': 100,
+  'Пілігрім': 100,
+  'Грехам Томас': 100,
+  'Графіня фон Харденберг': 100,
+  'Александра оф Кент': 100,
+  'Марія Магдалена': 100,
+  'Дарк Леді': 100,
+  'Принцеса Анна': 100,
+  'Клер Остін': 100,
+  'Крокус Роуз': 100,
+  'Королева Швеції': 100,
+  'Вінчестер Кафедрал': 100,
+  'Манстед Вуд': 100,
+  'Олівія Роуз': 100,
+  'Шаріфа Асма': 100,
+  'Строберрі Хілл': 100,
+  'Кейра': 100,
+  'Міранда': 100,
+  'Абрахам Дербі': 100,
+  'Джефф Гамільтон': 100,
+  'Е Шропшир Лед': 100,
+  'Ті Кліппер': 100,
+  'Боскобель': 100,
+  'Джеймс Гелвей': 100,
+  'Бєатріс': 100,
+  'Дарсі Бассел': 100,
+  'Зе Принц': 100,
+  'Леді оф Шалот': 100,
+  'Голден Селебрейшн': 100,
+  'Букет Парфе': 100,
+  'Моцарт леди': 100,
+  'Міднайт Блю': 100,
+  'Моцарт': 100,
+  'Айс оф зе Тайгер': 100,
+  'Айс фо ю': 100,
+  'Робін Гуд': 100,
+  'Буллс Айс': 100,
+  'Фейри': 100,
+  'Зонненшарм': 100,
+  'Сноу балєт': 100,
+  'Пінк Просперіті': 100,
+  'Скарлет Мейяндекор': 100,
+  'Ред каскад': 100,
+  'Джазз': 100,
+  'Спрей Вікторія': 100,
+  'Спрей Шайн': 100,
+  'Спрей Ред Макарена': 100,
+  'Сафіна': 100,
+  'Каталіна': 100,
+  'Алегрія': 100,
+  'Апельсин': 100,
+  'Ред Мікадо': 100,
+  'Роуз': 100,
+  'Оранж Бебі': 100,
+  'Вайс роуз': 100,
+  'Новаліс': 100,
+  'Помпонелла': 100,
+  'Ювілей принца Монако': 100,
+  'Тера Лімбургія': 100,
+  'Аріфа': 100,
+  'Хані Діжон': 100,
+  'Герцогиня Крістіна': 100,
+  'Курфюстен Софи': 100,
+  'Ангела': 100,
+  'Леонардо да Вінчі': 100,
+  'Вайт Леонардо да Вінчі': 100,
+  'Ред Леонардо да Вінчі': 100,
+  'Мінерва': 100,
+  'Аспірин': 100,
+  'Ізі даз Іт': 100,
+  'Лав Сонг': 100,
+  '4 Вітри': 100,
+  'Блю фо Ю': 100,
+  'Стефані Баронін цу Гутенберг': 100,
+  'Тєррі Маркс': 100,
+  'Френезі': 100,
+  'Баронесса': 100,
+  'Гранатовий Браслет': 100,
+  'Лайон Роуз': 100,
+  'Малікорн': 100
+};
 
 function saveCart() {
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -126,8 +208,33 @@ function addToCart(productName, buttonId) {
   saveCart();
   updateCartDisplay();
 }
-function increaseQuantity(index) {
-  cart[index].quantity++;
+function increaseQuantity(index, amount = 1) {
+  if (!cart[index]) return;
+  cart[index].quantity += amount;
+  saveCart();
+  updateCartDisplay();
+}
+
+function removeQuantity(index, amount) {
+  if (!cart[index]) return;
+
+  cart[index].quantity -= amount;
+  if (cart[index].quantity <= 0) {
+  const removedItem = cart[index].name;
+  const buttonId = productButtonMap[removedItem];
+  if (buttonId) {
+    const btn = document.getElementById(buttonId);
+    if (btn) {
+      btn.innerText = 'У кошик';
+      btn.disabled = false;
+      btn.onclick = function () {
+        addToCart(removedItem, buttonId);
+      };
+    }
+  }
+  cart.splice(index, 1);
+}
+
   saveCart();
   updateCartDisplay();
 }
@@ -152,26 +259,52 @@ function removeFromCart(index) {
   saveCart();
   updateCartDisplay();
 }
+function calculateTotal() {
+  return cart.reduce((total, item) => {
+    const price = productPrices[item.name] || 0;
+    return total + price * item.quantity;
+  }, 0);
+}
 
 function updateCartDisplay() {
-  const count = cart.reduce((total, item) => total + item.quantity, 0);
-  const countSpan = document.getElementById('cart-count');
-  if (countSpan) countSpan.innerText = count;
+  // Обновляем счётчик товаров
+  document.getElementById('cart-count').innerText =
+    cart.reduce((total, item) => total + item.quantity, 0);
 
   const list = document.getElementById('cart-list');
+  let totalSum = 0;
+
   if (list) {
     list.innerHTML = '';
+
     cart.forEach((item, index) => {
+      const price = productPrices[item.name] || 0;
+      const itemTotal = item.quantity * price;
+      totalSum += itemTotal;
+
       const li = document.createElement('li');
       li.className = 'cart-item';
       li.innerHTML = `
-        ${item.name} — ${item.quantity} шт. 
-        <button onclick="removeFromCart(${index})">−</button>
-        <button onclick="increaseQuantity(${index})">+</button>
+        ${item.name} — ${item.quantity} шт. x ${price} грн = ${itemTotal} грн 
+        <button onclick="removeFromCart(${index})">−1</button>
+        <button onclick="removeQuantity(${index}, 10)">−10</button>
+        <button onclick="increaseQuantity(${index})">+1</button>
+        <button onclick="increaseQuantity(${index}, 10)">+10</button>
       `;
       list.appendChild(li);
     });
+
+    const totalLi = document.createElement('li');
+    totalLi.innerHTML = `<strong>💵 Сума до сплати: ${totalSum} грн</strong>`;
+    list.appendChild(totalLi);
   }
+}
+
+
+function addQuantity(index, amount) {
+  cart[index].quantity += amount;
+  saveCart();
+  updateCartDisplay();
 }
 
 function toggleCart() {
@@ -195,6 +328,10 @@ function submitOrder() {
   const name = document.getElementById("customer-name").value.trim();
   const phone = document.getElementById("customer-phone").value.trim();
   const address = document.getElementById("customer-address").value.trim();
+  const totalSum = cart.reduce((sum, item) => {
+  const price = productPrices[item.name] || 0;
+  return sum + item.quantity * price;
+}, 0);
 
   if (!name || !phone || !address) {
     alert("Будь ласка, заповніть усі поля!");
@@ -204,6 +341,7 @@ function submitOrder() {
   const orderText =
     "🛒 НОВЕ ЗАМОВЛЕННЯ:\n\n" +
     cart.map((item, i) => `${i + 1}. ${item.name} — ${item.quantity} шт.`).join('\n') +
+    `\n\n💵 Сума до сплати: ${totalSum} грн` +
     "\n\n👤 Ім'я: " + name +
     "\n📞 Телефон: " + phone +
     "\n🏠 Адреса: " + address;
