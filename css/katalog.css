@@ -1,4 +1,4 @@
-@media (max-width: 760px) {
+@media (max-width: 620px) {
     .item-row {
     flex-direction: row;
     align-items: flex-start;
@@ -229,5 +229,11 @@ filter: inherit;
   background-color: #d6d3d3;
   cursor: pointer;
 }
+.preis p2 {
+    background-color: rgb(80, 148, 12);
+    border-radius: 7px;
+    color:rgb(238, 241, 241);
+    
 
+}
 
