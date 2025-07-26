@@ -11,7 +11,7 @@
     <div class="header">
         Японська Селекція</div>
 
-        <button class= "cartBtn" onclick="toggleCart()">🛒 Кошик (<span id="cart-count">0</span>)</button>
+        <button class= "cartBtn" onclick="toggleCart()">🛒 (<span id="cart-count">0</span>)</button>
         <div id="cart" style="display: none; border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
     <h3>Ваші товари:</h3>
     <ul id="cart-list"></ul>
@@ -21,10 +21,12 @@
   <input type="tel" id="customer-phone" placeholder="Телефон" required><br><br>
   <textarea id="customer-address" placeholder="Адреса доставки" required></textarea>
 </div>
-    <button class= "cartBtn" onclick="submitOrder()" style="margin-top:10px;">📤 Оформити замовлення</button>
+    <button onclick="submitOrder()" style="margin-top:10px;">📤 Оформити замовлення</button>
 </div>
         
         <a href="flow.html" class="back-button">На головну</a>
+        <a href="katalog5.html" class="previous-button"><<<</a>
+        <a href="katalog7.html" class="next-button">>>></a> 
 
         <div class="photo-block">
             <div class="item-row">
