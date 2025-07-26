@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media (max-width: 760px) {
     .item-row {
     flex-direction: row;
     align-items: flex-start;
@@ -78,7 +78,7 @@ html, body {
     background-color: rgba(255,255,255,0.4);
     padding: 30px;
     border-radius: 20px;
-    margin-top: 100px;
+    margin-top: 120px;
     flex-wrap: wrap;
 }
 
@@ -130,34 +130,29 @@ filter: inherit;
 }
 .back-button {
     text-align: center;
-    background-color: rgba(116, 59, 113, 0.4);
+    background-color:  rgb(168, 110, 165);
     color: #521748;
-    width: auto;
+    width: 100%;
     height: 30px;
-    line-height: 25px;
-    border-radius: 12px;
-    margin: 15px;
+    line-height: 25px;    
+    margin: 0;
     text-decoration: none;    
     position: fixed;
-    left: 47%;
     top:60px;
     font-size: 16px;
 
 }
 .back-button:hover {
-    background-color: rgba(116, 59, 113, 0.8);
-    border-radius: 7px;
-    color:rgb(170, 176, 182)
+    color:rgb(226, 234, 243);
 }
 .next-button{
     text-align: center;
     background-color: rgba(116, 59, 113, 0.4);
     color: #521748;
-    width: auto;
+    width: 35px;
     height: 30px;
     line-height: 25px;
-    border-radius: 10px;
-    margin: 15px;
+    border-radius: 10px;    
     text-decoration: none;    
     position: fixed;
     left: 90%;
@@ -167,17 +162,16 @@ filter: inherit;
 .next-button:hover {
     background-color: rgba(116, 59, 113, 0.8);
     border-radius: 7px;
-    color:rgb(170, 176, 182)
+    color:rgb(226, 234, 243);
 }
 .previous-button{
     text-align: center;
     background-color: rgba(116, 59, 113, 0.4);
     color: #521748;
-    width: auto;
+    width: 35px;
     height: 30px;
     line-height: 25px;
-    border-radius: 10px;
-    margin: 15px;
+    border-radius: 10px;    
     text-decoration: none;    
     position: fixed;
     left: 7%;
@@ -187,7 +181,7 @@ filter: inherit;
 .previous-button:hover {
     background-color: rgba(116, 59, 113, 0.8);
     border-radius: 7px;
-    color:rgb(170, 176, 182)
+    color:rgb(226, 234, 243);
 }
 .cartBtn {
   position: fixed;
