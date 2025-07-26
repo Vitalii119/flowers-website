@@ -1,16 +1,16 @@
 @media (max-width: 600px) {
     .item-row {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 
   .item-row img.photo {
     margin-right: 0;
     margin-bottom: 10px;
-    width: 100%;
+   
   }
   .photo-block {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
   }
 
