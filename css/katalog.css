@@ -187,8 +187,9 @@ filter: inherit;
   cursor: pointer;
   width: auto;             /* важно! убирает растяжение */
   max-width: 100px;
-  background-color: rgba(71, 69, 69, 0.4);
+  background-color: rgba(41, 39, 39, 0.4);
   z-index: 999;
+  color: aliceblue;
 
 
 }
@@ -196,7 +197,7 @@ filter: inherit;
  position: fixed;
  top: 110px;
  right: 15px; 
- background-color: rgb(168, 110, 165, 0.8);
+ background-color: rgb(168, 110, 165, 0.9);
 
 }
     
