@@ -482,7 +482,7 @@ function toggleCart() {
 
 const TELEGRAM_TOKEN = '8421402819:AAHXroHNrZDJ7HHPQaAhKrVUXfnxphxXu_M';
 const TELEGRAM_CHAT_ID = '521597324';
-const TELEGRAM_CHAT_ID = '529723065';
+
 
 function submitOrder() {
   if (cart.length === 0) {
